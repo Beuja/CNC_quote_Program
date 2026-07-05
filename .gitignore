@@ -1,0 +1,40 @@
+﻿# ==========================================
+# CMake, Visual Studio, and vcpkg .gitignore
+# ==========================================
+
+# 1. CMake 빌드 결과물 및 임시 파일
+/out/
+/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+
+# 2. Visual Studio 및 MSVC 임시 파일
+.vs/
+*.user
+*.suo
+*.userOSscache
+*.sln.docstates
+
+# 3. vcpkg 패키지 매니저 파일
+# (머니페스트 모드 사용 시 로컬에 설치되는 의존성 폴더)
+/vcpkg_installed/
+
+# 4. 컴파일 및 링커 결과 파일
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.lib
+*.dll
+*.so
+*.dylib
+*.a
+
+# 5. OS 및 기타 개발 툴 임시 파일
+.DS_Store
+Thumbs.db
+*.swp
+*~
