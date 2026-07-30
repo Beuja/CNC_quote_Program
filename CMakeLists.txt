@@ -1,4 +1,4 @@
-# CMakeList.txt: CNC_quote_program에 대한 CMake 프로젝트, 여기에 소스를 포함하고
+﻿# CMakeList.txt: CNC_quote_program에 대한 CMake 프로젝트, 여기에 소스를 포함하고
 # 프로젝트 특정 논리를 정의합니다.
 cmake_minimum_required (VERSION 3.10)
 
@@ -24,7 +24,16 @@ find_package(OpenCASCADE REQUIRED)
 find_package(pybind11 REQUIRED)
 
 # 이 프로젝트의 실행 파일에 소스를 추가합니다.
-add_executable (CNC_quote_program "CNC_quote_program.cpp" "CNC_quote_program.h")
+add_executable (CNC_quote_program
+    src/main.cpp
+    src/OcctWidget.cpp
+    src/MainWindow.cpp
+    include/OcctWidget.h
+    include/MainWindow.h
+ "include/MaterialDB.h")
+
+# 헤더파일 검색 경로 추가
+target_include_directories(CNC_quote_program PRIVATE include)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CNC_quote_program PROPERTY CXX_STANDARD 20)
